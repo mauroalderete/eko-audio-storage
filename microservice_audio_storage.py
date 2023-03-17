@@ -19,7 +19,7 @@ audio_schema = {
                 "session": {
                     "type": "object",
                     "properties": {
-                        "id": {"type": "string", "pattern": "^[\w-]+$"},
+                        "id": {"type": "string", "pattern": r"^[\w-]+$"},
                     },
                     "required": ["id"],
                 },
