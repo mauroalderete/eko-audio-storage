@@ -29,4 +29,4 @@ jobs:
 
       - name: Run unit tests with coverage
         run: |
-          pytest --cov=microservice_audio_storage --cov-report html test_microservice_audio_storage.py
+          pytest --cov=microservice_audio_storage test_microservice_audio_storage.py
