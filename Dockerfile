@@ -1,5 +1,5 @@
 # Build step
-FROM python:3.10-slim as build
+FROM python:3.10-alpine as build
 
 WORKDIR /app
 
@@ -12,10 +12,11 @@ COPY microservice_audio_storage.py .
 FROM build as test
 
 COPY test_microservice_audio_storage.py .
+COPY pytest.ini .
 RUN pytest --cov=microservice_audio_storage --cov-report html test_microservice_audio_storage.py
 
 # Production step
-FROM python:3.10-slim as production
+FROM python:3.10-alpine as production
 
 WORKDIR /app
 
